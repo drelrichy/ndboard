@@ -1,4 +1,5 @@
 // Fetch the last 5 invoices, sorted by date
+import { unstable_noStore as noStore } from 'next/cache';
 const data = await sql<LatestInvoiceRaw>`
   SELECT invoices.amount, customers.name, customers.image_url, customers.email
   FROM invoices
